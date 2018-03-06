@@ -5,15 +5,15 @@ class SpacesController < ApplicationController
   end
 
   def show
-    @spaces = Space.find(params[:id])
+    @space = Space.find(params[:id])
   end
 
   def new
-    @spaces = Space.new
+    @space = Space.new
   end
 
   def create
-    @spaces = Space.new(space_params)
+    @space = Space.new(space_params)
     space.save
     redirect_to space_path(@spaces)
   end
