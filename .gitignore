@@ -12,6 +12,7 @@ public/packs-test
 node_modules
 .byebug_history
 yarn.error.log
+yarn-error.log
 
 # Ignore application configuration
 /config/application.yml
