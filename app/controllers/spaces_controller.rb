@@ -13,7 +13,7 @@ class SpacesController < ApplicationController
   end
 
   def create
-    @spaces = Space.new(spaces_params)
+    @spaces = Space.new(space_params)
     space.save
     redirect_to space_path(@spaces)
   end
