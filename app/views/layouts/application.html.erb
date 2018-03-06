@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>Bars for events</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -15,5 +15,17 @@
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#"><i class="fa fa-github"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+      </div>
+      <div class="footer-copyright">
+        Bars made with <i class="fa fa-heart"></i> in Barcelona
+      </div>
+    </div>
   </body>
 </html>
