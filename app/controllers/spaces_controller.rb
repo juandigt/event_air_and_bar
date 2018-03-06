@@ -18,6 +18,15 @@ class SpacesController < ApplicationController
     redirect_to space_path(@spaces)
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
   private
 
   def space_params
