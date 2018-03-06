@@ -1,2 +1,15 @@
 <h1>Spaces#show</h1>
-<p>Find me in app/views/spaces/show.html.erb</p>
+
+<h1><%= @space.name %></h1>
+<p><%= @space.photo %></p>
+<p><%= @space.address %></p>
+<p><%= @space.capacity %></p>
+<p><%= @space.price %></p>
+<p><%= @space.description %></p>
+
+
+
+<%= link_to "Edit space" , edit_space_path %>
+
+<%= link_to "Delete Space" , space_path(space), method: :delete,  class: "btn btn-danger" %>
+
