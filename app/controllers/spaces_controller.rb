@@ -31,7 +31,7 @@ class SpacesController < ApplicationController
   private
 
   def space_params
-    params.require(:space).permit(:description)
+    params.require(:space).permit(:description, )
   end
 
 end
