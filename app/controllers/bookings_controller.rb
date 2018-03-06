@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  skip_before_action :authenticate_user!
+  # Add exceptions to above line - Ie: ', only: :home'
 
   def index
     @bookings = Booking.all
