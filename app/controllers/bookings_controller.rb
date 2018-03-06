@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(booking_params)
-    @task.update(booking_params)
+    @booking.update(booking_params)
     redirect_to bookings_path
   end
 
