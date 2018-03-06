@@ -1,7 +1,11 @@
 class SpacesController < ApplicationController
 
   def index
-    @spaces = Space.all
+    @spaces = if params[:address]
+      Space.where('name LIKE ?', "%#{params[:address]}%")
+    else
+      Space.all
+    end
   end
 
   def show
