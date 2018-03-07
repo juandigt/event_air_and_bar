@@ -29,8 +29,6 @@ class SpacesController < ApplicationController
 
   end
 
-
-
   def destroy
   end
 
