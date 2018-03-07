@@ -17,7 +17,8 @@ Space.create!(
   address: "Rambla del Raval, 17-21, 08001 Barcelona, Spain",
   capacity: 500,
   price: 500,
-  user: u
+  user: u,
+  photo: "https://www.hotelmajestic.es/sites/default/files/catering-events-banqueting-venues-majestic-hotel-5-star-barcelona.jpg"
 )
 Space.create!(
   name: "Nice place for majestic events",
@@ -25,7 +26,9 @@ Space.create!(
   address: "Passeig de Gràcia 68, 08007, Barcelona, Spain",
   capacity: 300,
   price: 5000,
-  user: u
+  user: u,
+  photo: "https://www.hotelmajestic.es/sites/default/files/catering-events-banqueting-venues-majestic-hotel-5-star-barcelona.jpg"
+
 )
 Space.create!(
   name: "Maria Elena Place - the number one in Madrid",
@@ -33,7 +36,8 @@ Space.create!(
   address: "Maria Elena Place, Calle Aduana 19, Madrid, Spain",
   capacity: 100,
   price: 2500,
-  user: v
+  user: v,
+  photo: "http://hotelcdn.travelpony.com/1204519/hotel-maria-elena-palace-madrid-95.jpg"
 )
 Space.create!(
   name: "Host your event here",
@@ -41,7 +45,8 @@ Space.create!(
   address: "Allied London, 33 Cork Street, London, Great Britain",
   capacity: 250,
   price: 1500,
-  user: w
+  user: w,
+  photo: "https://skygarden.london/sites/default/files/Rhubarb%20event%2010%20March%20-%20Web%20Sized07.jpg"
 )
 Space.create!(
   name: "Enjoy your event in an aviation atmosphere",
@@ -49,7 +54,8 @@ Space.create!(
   address: "Frankfurt Aviation Campus, Airportring Tor 24, 60549 Frankfurt am Main, Germany",
   capacity: 450,
   price: 500,
-  user: v
+  user: v,
+  photo: "https://www.protoura.com/media/img/galleries/event-locations/wien/5_3_Eventloc_VIE_12.jpg"
 )
 Space.create!(
   name: "Enjoy your event in an aviation atmosphere",
@@ -57,7 +63,13 @@ Space.create!(
   address: "Vienna Aviation Campus, Austrian Airlines Base, 1300 Vienna Airport, Austria",
   capacity: 500,
   price: 300,
-  user: v
+  user: v,
+  photo: "https://www.protoura.com/media/img/galleries/event-locations/wien/5_3_Eventloc_VIE_12.jpg"
 )
 
 puts 'Finished!'
+
+
+
+
+
