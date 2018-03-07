@@ -3,15 +3,19 @@
 
 <%= form_tag(spaces_path, method: :get) do %>
   <%= text_field_tag :address, params[:address] %>
+  <%= text_field_tag :name, params[:name] %>
+  <%= text_field_tag :price, params[:price] %>
+  <%= text_field_tag :capacity, params[:capacity] %>
   <%= submit_tag 'Search' %>
 <% end %>
-
-
-
 
 
 <h1>List of spaces</h1>
 <% @spaces.each do |space| %>
   <h2><%= space.name %></h2>
   <p><%= space.address %></p>
+  <p> id<%= space.id %></p>
+  <p>User id<%= space.user_id %></p>
+  <%= link_to "view details " , space_path(space)%>
+  <%= link_to "Delete " , space_path(space), method: :delete %>
 <% end %>

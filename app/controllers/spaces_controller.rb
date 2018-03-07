@@ -3,8 +3,9 @@ class SpacesController < ApplicationController
   # Add exceptions to above line - Ie: ', only: :home'
 
   def index
-    @spaces = if params[:address]
-      Space.where('name LIKE ?', "%#{params[:address]}%")
+    @spaces = Space.all
+    if params[:address]
+      @spaces = Space.search(params[:address])
     else
       Space.all
     end
@@ -36,6 +37,9 @@ class SpacesController < ApplicationController
   end
 
   def destroy
+    @space = Space.find(params[:id])
+    @space.destroy
+    redirect_to spaces_path
   end
 
   private
