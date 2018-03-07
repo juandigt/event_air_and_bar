@@ -31,7 +31,13 @@ class SpacesController < ApplicationController
   end
 
   def edit
+     @space = Space.find(params[:id])
+  end
 
+  def update
+    @space = Space.find(params[:id])
+    @space.update(space_params)
+    redirect_to space_path(@space)
   end
 
   def destroy
@@ -47,3 +53,5 @@ class SpacesController < ApplicationController
   end
 
 end
+
+
