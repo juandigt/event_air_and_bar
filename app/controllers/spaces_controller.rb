@@ -4,6 +4,11 @@ class SpacesController < ApplicationController
 
   def index
     @spaces = Space.all
+    if params[:address]
+      @spaces = Space.search(params[:address])
+    else
+      Space.all
+    end
   end
 
   def show
@@ -26,12 +31,13 @@ class SpacesController < ApplicationController
   end
 
   def edit
-  end
 
-  def update
   end
 
   def destroy
+    @space = Space.find(params[:id])
+    @space.destroy
+    redirect_to spaces_path
   end
 
   private
@@ -41,5 +47,3 @@ class SpacesController < ApplicationController
   end
 
 end
-
-
