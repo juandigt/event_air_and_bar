@@ -1,0 +1,12 @@
+<h1><%= @space.name %></h1>
+<div >
+    <%= simple_form_for(@space) do |f| %>
+      <%= f.input :name, label: "Name: " %>
+      <%= f.input :address, label: "Address:" %>
+      <%= f.input :capacity, label: "Capacity:" %>
+      <%= f.input :price, label: "Price:" %>
+      <%= f.input :description, label: "Description" %>
+      <%= f.input :photo, label: "Photo" %>
+      <%= f.submit "Edit Space", class: "btn btn-primary" %>
+    <% end %>
+</div>
