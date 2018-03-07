@@ -31,9 +31,7 @@ class SpacesController < ApplicationController
   end
 
   def edit
-  end
 
-  def update
   end
 
   def destroy
@@ -49,5 +47,3 @@ class SpacesController < ApplicationController
   end
 
 end
-
-
