@@ -1,13 +1,14 @@
 <div class="container">
   <div class="row filter-bar">
     <div class="col-xs-12">
-      <%= simple_form_for(spaces_path, method: :get) do %>
-        <%= text_field_tag :address, params[:address], placeholder: "Type in a city", class: "form-fields" %>
-        <%= text_field_tag :name, params[:name], placeholder: "Name", class: "form-fields" %>
-        <%= text_field_tag :price, params[:price], placeholder: "Price", class: "form-fields" %>
-        <%= text_field_tag :capacity, params[:capacity], placeholder: "Capacity", class: "form-fields" %>
-        <%= submit_tag 'Search', class: "btn btn-primary" %>
-      <% end %>
+      <div class="form-inline">
+        <%= simple_form_for(spaces_path, method: :get) do %>
+          <%= text_field_tag :address, params[:address], placeholder: "Type in a city", class: "form-control form-fields" %>
+          <%= text_field_tag :price, params[:price], placeholder: "Price", class: "form-control form-fields" %>
+          <%= text_field_tag :capacity, params[:capacity], placeholder: "Capacity", class: "form-control form-fields" %>
+          <%= submit_tag 'Search', class: "btn btn-primary form-control" %>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="row">
