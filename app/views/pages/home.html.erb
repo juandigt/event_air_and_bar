@@ -5,9 +5,10 @@
     <h1>Find the perfect location for your event</h1>
     <p>
       <%= form_tag(spaces_path, method: :get) do %>
-      <%= text_field_tag :address, params[:address], placeholder: "type in a city", class: "banner-home" %>
-      <%= submit_tag 'Search', class: "btn btn-primary" %>
-    <% end %>
+      <div><%= text_field_tag :address, params[:address], placeholder: "type in a city", class: "banner-home" %>
+        <%= submit_tag 'Search', class: "btn btn-primary" %>
+        <% end %>
+      </div>
     </p>
 
   </div>
