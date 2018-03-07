@@ -47,3 +47,31 @@
 .card-link:hover {
   opacity: 0.1;
 }
+
+.details-card {
+  height: 500px;
+  text-shadow: none;
+  width: 500px;
+
+}
+
+.form-box-show-space{
+  margin-top: 20px;
+  width: 600px;
+  padding: 10px 20px;
+  margin: 1px auto;
+  padding: 20px;
+  color: white;
+  border-radius: 8px;
+  background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%)
+}
+
+.description-show-card p {
+  font-size: 16px;
+  opacity: 1;
+  font-weight: lighter;
+}
+
+.placement-description {
+  padding-bottom: 200px;
+}
