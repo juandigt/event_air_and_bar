@@ -67,6 +67,36 @@ Space.create!(
   photo: "https://www.protoura.com/media/img/galleries/event-locations/wien/5_3_Eventloc_VIE_12.jpg"
 )
 
+Space.create!(
+  name: "Enjoy your event here with us!",
+  description: "A highly modern atmosphere in the world of aviation awaits you in the Lufthansa training centre.",
+  address: "Vienna Hotel Mozart, Austrian Main Street, Vienna, Austria",
+  capacity: 500,
+  price: 300,
+  user: v,
+  photo: "https://www.protoura.com/media/img/galleries/event-locations/wien/5_3_Eventloc_VIE_12.jpg"
+)
+
+Space.create!(
+  name: "Nicest place for an event",
+  description: "A highly modern atmosphere in the world of aviation awaits you in the Lufthansa training centre.",
+  address: "Vienna Aviation Campus, Austrian Airlines Base, Austria",
+  capacity: 500,
+  price: 300,
+  user: v,
+  photo: "https://www.protoura.com/media/img/galleries/event-locations/wien/5_3_Eventloc_VIE_12.jpg"
+)
+
+Space.create!(
+  name: "Enjoy your event with flair",
+  description: "A highly modern atmosphere in the world of aviation awaits you in the Lufthansa training centre.",
+  address: "Hotel Sherlock, Dark Street, Birmingham, Great Britain",
+  capacity: 500,
+  price: 300,
+  user: v,
+  photo: "https://www.protoura.com/media/img/galleries/event-locations/wien/5_3_Eventloc_VIE_12.jpg"
+)
+
 puts 'Finished!'
 
 
