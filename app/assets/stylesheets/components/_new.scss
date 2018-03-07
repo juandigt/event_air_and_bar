@@ -1,12 +1,31 @@
 
+.title-new-page {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+
+}
+
+.background-new-space-page{
+  background-image: url("bar.jpg");
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1px;
+}
+
 .form-box{
+  margin-top: 40px;
   max-width: 500px;
   padding: 10px 20px;
-  margin: 10px auto;
+  margin: 1px auto;
   padding: 20px;
+  color: white;
   border-radius: 8px;
   background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%)
 }
+
 
 .btn-new-space {
   position: relative;
@@ -14,12 +33,12 @@
   padding: 19px 39px 18px 39px;
   color: #FFF;
   margin: 0 auto;
-  background: #1abc9c;
+  background: #768ebf;
   font-size: 18px;
   text-align: center;
   font-style: normal;
   width: 100%;
-  border: 1px solid #16a085;
+  border: 1px solid #768ebf;
   border-width: 1px 1px 3px;
   margin-bottom: 10px;
 }
