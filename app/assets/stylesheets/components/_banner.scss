@@ -9,14 +9,18 @@
   justify-content: center;
 }
 .banner h1 {
-  font-size: 50px;
-  font-weight: bold;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  font-size: 32px;
+  font-weight: normal;
 }
 .banner p {
-  font-size: 25px;
+  font-size: 16px;
   font-weight: lighter;
   color: rgb(255, 255, 255);
   opacity: 0.6;
   margin-bottom: 30px;
 }
+
+.banner-home {
+  color: black;
+  height: 36px;
+  }
