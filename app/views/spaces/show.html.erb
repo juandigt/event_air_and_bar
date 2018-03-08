@@ -1,17 +1,67 @@
-<div class="card details-card form-box-show-space" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @space.photo %>);">
-  <div class="card-description description-show-card">
-    <div class="placement-description">
-      <h2><%= @space.name %></h2>
-      <p><%= @space.description %></p>
+<div class="grid">
+
+  <div class="element1">
+    <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @space.photo %>);">
     </div>
-<!--     <div class="placement-details">
- -->    <p>Adress: <%= @space.address %></p>
-    <p>Capacity: <%= @space.capacity %> people</p>
-    <p>Price: <%= @space.price.to_i %> &euro; for 24 hours</p>
-    <%= link_to "Edit my space", edit_space_path, class: "btn btn-primary" %>
-    <%= link_to "BOOK", new_space_booking_path(@space), class: "btn btn-success" %>
   </div>
+
+  <div class="element2">
+    <div>
+      <div>
+        <h2><%= @space.name %></h2>
+        <p><%= @space.description %></p>
+      </div>
+      <p>Adress: <%= @space.address %></p>
+      <p>Capacity: <%= @space.capacity %> people</p>
+      <p>Price: <%= @space.price.to_i %> &euro; for 24 hours</p>
+      <% if @space.user_id == current_user.id %>
+        <%= link_to "Edit my space", edit_space_path, class: "btn btn-primary" %>
+      <% end %>
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#bookModal">BOOK</button>
+    </div>
+
+    <div> <!-- Bookings -->
+      <% @userbookings.each do |b| %>
+        <p>
+          <% if b.status == nil %>
+            You have no bookings yet
+          <% elsif b.status == 2 %>
+            <i class="far fa-smile text-success"></i> Approved - <%= b.date %>
+          <% elsif b.status == 1 %>
+            <i class="far fa-meh text-primary"></i> Pending - <%= b.date %>
+          <% else %>
+            <i class="far fa-frown text-danger"></i> Declined - <%= b.date %>
+          <% end %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+
 </div>
 
+<!-- Modal -->
+<div id="bookModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Book</h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for([@space, @booking]) do |b| %>
+          <%= b.input :date, label: "Date: " %>
+          <%= b.hidden_field :status %>
+          <%= b.hidden_field :user_id %>
+          <%= b.hidden_field :space_id %>
+          <%= b.submit "Book", class: "btn btn-primary btn-new-space" %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+      </div>
+    </div>
 
+  </div>
+</div>

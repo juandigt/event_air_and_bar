@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = Booking.find(params[:id])
+    @booking = current_user.bookings.find(params[:id])
   end
 
   def new
@@ -17,8 +17,7 @@ class BookingsController < ApplicationController
 
   def create
     @space = Space.find(params[:space_id])
-    @booking = Booking.new(booking_params)
-    @booking.user = current_user
+    @booking = current_user.bookings.new(booking_params)
     @booking.status = 1
     @booking.space = @space
     if @booking.save(booking_params)
