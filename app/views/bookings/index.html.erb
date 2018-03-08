@@ -1,2 +1,16 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<h1>Welcome to your places list <%= current_user.email %></h1>
+
+
+<div class="row">
+    <% current_user.spaces.each do |space| %>
+      <div class="col-xs-12 col-md-6 col-lg-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(<%= space.photo %>);">
+          <div class="card-category">
+            <%= space.name[0..30] %>&hellip;
+          </div>
+          <%= link_to "view details >", space_path(space.id), class: "card-link" %>
+
+        </div>
+      </div>
+    <% end %>
+  </div>

@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
   # Add exceptions to above line - Ie: ', only: :home'
 
   def index
+    @spaces = policy_scope(Space).order(created_at: :desc)
     @bookings = Booking.all
   end
 
