@@ -20,6 +20,7 @@ class BookingsController < ApplicationController
     @booking = current_user.bookings.new(booking_params)
     @booking.status = 1
     @booking.space = @space
+    authorize @space
     if @booking.save(booking_params)
       redirect_to space_path(@space)
     else
