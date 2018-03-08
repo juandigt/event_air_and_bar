@@ -1,40 +1,43 @@
+<div class="banner banner-space-img" style="background-image: url('<%= @space.photo %>');">
+  <div class="banner-lower-left">
+    <% if current_user %>
+      <% if @space.user_id == current_user.id %>
+        <%= link_to "Edit my space", edit_space_path, class: "btn btn-lg" %>
+      <% elsif @space.user_id != current_user.id %>
+        <button type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target="#bookModal">Book This Place</button>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-6">
-      <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @space.photo %>);">
+      <div>
+        <h1><%= @space.name %></h1>
+        <p><%= @space.address %></p>
+        <p><i class="fas fa-users"></i> <%= @space.capacity %> people</p>
+        <h3><i class="fas fa-euro-sign"></i> <%= @space.price.to_i %> for 24 hours</h3>
+        <p><%= @space.description %></p>
       </div>
     </div>
-
-    <div class="col-xs-12 col-md-6">
-      <div>
-        <div>
-          <h2><%= @space.name %></h2>
-          <p><%= @space.description %></p>
-        </div>
-        <p>Adress: <%= @space.address %></p>
-        <p>Capacity: <%= @space.capacity %> people</p>
-        <p>Price: <%= @space.price.to_i %> &euro; for 24 hours</p>
-        <% if @space.user_id == current_user.id %>
-          <%= link_to "Edit my space", edit_space_path, class: "btn btn-primary" %>
-        <% end %>
-        <% if @space.user_id != current_user.id %>
-          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#bookModal">BOOK</button>
-        <% end %>
-      </div>
-
+    <div class="col-xs-12 col-md-6 text-center">
       <div> <!-- Bookings -->
-        <% @userbookings.each do |b| %>
-          <p>
-            <% if b.status == nil %>
-              You have no bookings yet
-            <% elsif b.status == 2 %>
-              <i class="far fa-smile text-success"></i> Approved - <%= b.date %>
-            <% elsif b.status == 1 %>
-              <i class="far fa-meh text-primary"></i> Pending - <%= b.date %>
-            <% else %>
-              <i class="far fa-frown text-danger"></i> Declined - <%= b.date %>
-            <% end %>
-          </p>
+        <% if @userbookings != [] %>
+          <h2>Your bookings</h2>
+          <% @userbookings.each do |b| %>
+            <h3>
+              <% if b.status == nil %>
+                You have no bookings yet
+              <% elsif b.status == 2 %>
+                <span class="text-success">Approved </span><i class="far fa-smile text-success"></i> <%= b.date %>
+              <% elsif b.status == 1 %>
+                <span class="text-primary">Pending </span><i class="far fa-meh text-primary"></i> <%= b.date %>
+              <% else %>
+                <span class="text-danger">Declined </span><i class="far fa-frown text-danger"></i> <%= b.date %>
+              <% end %>
+            </h3>
+          <% end %>
         <% end %>
       </div>
     </div>
