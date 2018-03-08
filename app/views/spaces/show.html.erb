@@ -1,4 +1,3 @@
-
 <div class="card details-card form-box-show-space" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @space.photo %>);">
   <div class="card-description description-show-card">
     <div class="placement-description">
@@ -8,9 +7,9 @@
 <!--     <div class="placement-details">
  -->    <p>Adress: <%= @space.address %></p>
     <p>Capacity: <%= @space.capacity %> people</p>
-    <p>Price: <%= @space.price.to_i %> &euro; </%> for 24 hours</p>
-    <%= link_to "Edit my space" , edit_space_path, class: "btn btn-primary" %>
-    </<!-- div -->>
+    <p>Price: <%= @space.price.to_i %> &euro; for 24 hours</p>
+    <%= link_to "Edit my space", edit_space_path, class: "btn btn-primary" %>
+    <%= link_to "BOOK", new_space_booking_path(@space), class: "btn btn-success" %>
   </div>
 </div>
 

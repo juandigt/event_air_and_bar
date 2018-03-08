@@ -1,2 +1,11 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<div class="background-new-space-page">
+  <div class="form-box">
+    <h1 class="title-new-page">Book</h1>
+    <%= simple_form_for(@booking) do |b| %>
+      <%= b.input :date, label: "Date: " %>
+      <%= b.hidden_field :user_id, value: current_user %>
+      <%= b.hidden_field :space_id, value: space_id[0] %>
+      <%= b.submit "Book", class: "btn btn-primary btn-new-space" %>
+    <% end %>
+  </div>
+</div>
