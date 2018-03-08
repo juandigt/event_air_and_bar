@@ -22,3 +22,14 @@ a.animated-button:hover:after {
   opacity: 1;
   height: 600% !important;
 }
+
+.banner-space-img {
+  height: 60vh;
+  position: relative;
+}
+
+.banner-lower-left {
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+}
