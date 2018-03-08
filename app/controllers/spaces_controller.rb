@@ -15,6 +15,11 @@ class SpacesController < ApplicationController
   def show
     @space = Space.find(params[:id])
     @booking = Booking.new
+    if current_user
+      @userbookings = @space.bookings.select { |b| b.user_id == current_user.id }.sort_by { |booking| booking.date}
+    else
+      @userbookings = []
+    end
     authorize @space
   end
 
