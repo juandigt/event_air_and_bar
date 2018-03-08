@@ -1,8 +1,10 @@
 class SpacesController < ApplicationController
   skip_before_action :authenticate_user!
+
   # Add exceptions to above line - Ie: ', only: :home'
 
   def index
+     @spaces = policy_scope(Space).order(created_at: :desc)
     if any_of_search_params_present?
       @spaces = filter_spaces
     else
@@ -13,15 +15,18 @@ class SpacesController < ApplicationController
   def show
     @space = Space.find(params[:id])
     @booking = Booking.new
+    authorize @space
   end
 
   def new
     @space = Space.new
+    authorize @space
   end
 
   def create
     @space = Space.new(space_params)
     @space.user = current_user
+    authorize @space
     if @space.save
       redirect_to space_path(@space)
     else
@@ -31,12 +36,14 @@ class SpacesController < ApplicationController
 
   def edit
      @space = Space.find(params[:id])
+     authorize @space
   end
 
   def update
     @space = Space.find(params[:id])
     @space.update(space_params)
     redirect_to space_path(@space)
+     authorize @space
   end
 
   def destroy
