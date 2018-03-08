@@ -6,3 +6,19 @@
   margin-top: 15px;
   margin-bottom: 10px;
 }
+
+a.animated-button {
+  border: 2px solid #D24D57;
+}
+a.animated-button:after {
+  background: #D24D57;
+  opacity: .5;
+  -moz-transform: translateY(-50%) translateX(-50%) rotate(90deg);
+  -ms-transform: translateY(-50%) translateX(-50%) rotate(90deg);
+  -webkit-transform: translateY(-50%) translateX(-50%) rotate(90deg);
+  transform: translateY(-50%) translateX(-50%) rotate(90deg);
+}
+a.animated-button:hover:after {
+  opacity: 1;
+  height: 600% !important;
+}

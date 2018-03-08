@@ -3,11 +3,10 @@ class SpacesController < ApplicationController
   # Add exceptions to above line - Ie: ', only: :home'
 
   def index
-    @spaces = Space.all
-    if params[:address]
-      @spaces = Space.search(params[:address])
+    if any_of_search_params_present?
+      @spaces = filter_spaces
     else
-      Space.all
+      @spaces = Space.all
     end
   end
 
@@ -50,6 +49,18 @@ class SpacesController < ApplicationController
 
   def space_params
     params.require(:space).permit(:description, :name, :address, :capacity, :price, :photo, :user_id)
+  end
+
+  def any_of_search_params_present?
+    params[:address].present? || params[:price].present? || params[:capacity].present?
+  end
+
+  def filter_spaces
+    price = params[:price].present? ? params[:price] : Float::INFINITY
+    capacity = params[:capacity].present? ? params[:capacity] : 100000
+    Space.where("address ILIKE ?", "%#{params[:address]}%")
+         .where("price <= ?", price)
+         .where("capacity <= ?", capacity)
   end
 
 end
