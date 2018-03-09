@@ -1,5 +1,6 @@
 puts "Creating a user"
 
+Booking.destroy_all
 Space.destroy_all
 User.destroy_all
 
@@ -18,7 +19,7 @@ Space.create!(
   capacity: 500,
   price: 500,
   user: u,
-  photo: "https://www.hotelmajestic.es/sites/default/files/catering-events-banqueting-venues-majestic-hotel-5-star-barcelona.jpg"
+  remote_photo_url: "https://www.hotelmajestic.es/sites/default/files/catering-events-banqueting-venues-majestic-hotel-5-star-barcelona.jpg"
 )
 Space.create!(
   name: "Nice place for majestic events",
@@ -27,7 +28,7 @@ Space.create!(
   capacity: 300,
   price: 5000,
   user: u,
-  photo: "https://www.hotelmajestic.es/sites/default/files/catering-events-banqueting-venues-majestic-hotel-5-star-barcelona.jpg"
+  remote_photo_url: "https://www.hotelmajestic.es/sites/default/files/catering-events-banqueting-venues-majestic-hotel-5-star-barcelona.jpg"
 
 )
 Space.create!(
@@ -37,7 +38,7 @@ Space.create!(
   capacity: 100,
   price: 2500,
   user: v,
-  photo: "http://hotelcdn.travelpony.com/1204519/hotel-maria-elena-palace-madrid-95.jpg"
+  remote_photo_url: "http://hotelcdn.travelpony.com/1204519/hotel-maria-elena-palace-madrid-95.jpg"
 )
 Space.create!(
   name: "Host your event here",
@@ -46,7 +47,7 @@ Space.create!(
   capacity: 250,
   price: 1500,
   user: w,
-  photo: "https://skygarden.london/sites/default/files/Rhubarb%20event%2010%20March%20-%20Web%20Sized07.jpg"
+  remote_photo_url: "https://skygarden.london/sites/default/files/Rhubarb%20event%2010%20March%20-%20Web%20Sized07.jpg"
 )
 Space.create!(
   name: "Enjoy your event in an aviation atmosphere",
@@ -55,7 +56,7 @@ Space.create!(
   capacity: 450,
   price: 500,
   user: v,
-  photo: "https://www.protoura.com/media/img/galleries/event-locations/wien/5_3_Eventloc_VIE_12.jpg"
+  remote_photo_url: "https://www.protoura.com/media/img/galleries/event-locations/wien/5_3_Eventloc_VIE_12.jpg"
 )
 Space.create!(
   name: "Enjoy your event in an aviation atmosphere",
@@ -64,7 +65,7 @@ Space.create!(
   capacity: 500,
   price: 300,
   user: v,
-  photo: "https://www.protoura.com/media/img/galleries/event-locations/wien/5_3_Eventloc_VIE_12.jpg"
+  remote_photo_url: "https://www.protoura.com/media/img/galleries/event-locations/wien/5_3_Eventloc_VIE_12.jpg"
 )
 
 Space.create!(
@@ -74,7 +75,7 @@ Space.create!(
   capacity: 500,
   price: 300,
   user: v,
-  photo: "https://www.protoura.com/media/img/galleries/event-locations/wien/5_3_Eventloc_VIE_12.jpg"
+  remote_photo_url: "https://www.protoura.com/media/img/galleries/event-locations/wien/5_3_Eventloc_VIE_12.jpg"
 )
 
 Space.create!(
@@ -84,7 +85,7 @@ Space.create!(
   capacity: 500,
   price: 300,
   user: v,
-  photo: "https://www.protoura.com/media/img/galleries/event-locations/wien/5_3_Eventloc_VIE_12.jpg"
+  remote_photo_url: "https://www.protoura.com/media/img/galleries/event-locations/wien/5_3_Eventloc_VIE_12.jpg"
 )
 
 Space.create!(
@@ -94,7 +95,7 @@ Space.create!(
   capacity: 500,
   price: 300,
   user: v,
-  photo: "https://www.protoura.com/media/img/galleries/event-locations/wien/5_3_Eventloc_VIE_12.jpg"
+  remote_photo_url: "https://www.protoura.com/media/img/galleries/event-locations/wien/5_3_Eventloc_VIE_12.jpg"
 )
 
 puts 'Finished!'
