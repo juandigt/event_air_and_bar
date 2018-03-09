@@ -54,13 +54,13 @@ class SpacesController < ApplicationController
   def destroy
     @space = Space.find(params[:id])
     @space.destroy
-    redirect_to spaces_path
+    redirect_to dashboard_path
   end
 
   private
 
   def space_params
-    params.require(:space).permit(:description, :name, :address, :capacity, :price, :photo, :user_id)
+    params.require(:space).permit(:description, :name, :address, :capacity, :price, :photo, :user_id, :booking_id)
   end
 
   def any_of_search_params_present?

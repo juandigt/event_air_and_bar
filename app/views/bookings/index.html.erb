@@ -1,16 +1,24 @@
 <h1>Welcome to your places list <%= current_user.email %></h1>
 
 
-<div class="row">
-    <% current_user.spaces.each do |space| %>
-      <div class="col-xs-12 col-md-6 col-lg-4">
+<div class="row ">
+    <% @spaces.each do |space| %>
+      <div class="col-xs-12 col-md-10 col-lg-10">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(<%= space.photo %>);">
+
           <div class="card-category">
-            <%= space.name[0..30] %>&hellip;
+            <%= space.name%>
+
+            <%= link_to "Edit my space", edit_space_path(space), class: "btn btn-lg" %>
+
           </div>
-          <%= link_to "view details >", space_path(space.id), class: "card-link" %>
+          <%= link_to "view details >", space_path(space), class: "card-link" %>
 
         </div>
       </div>
+
+      <ul>
+        <%=  %>
+      </ul>
     <% end %>
   </div>
