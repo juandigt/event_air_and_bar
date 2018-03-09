@@ -33,3 +33,43 @@ a.animated-button:hover:after {
   bottom: 25px;
   left: 30px;
 }
+
+.background-space-info {
+  background-color: #FFFFF8;
+  margin-top: 30px;
+  padding: 10px 30px 20px 30px;
+}
+
+.container.space-card-container {
+  width: 95%;
+}
+
+.space-card {
+  margin: 0 10px 10px 10px;
+}
+
+.space-card-image {
+  width: 100%;
+  height: 320px;
+  background-size: cover !important;
+  background-position: center;
+}
+
+.space-card-content {
+
+}
+
+.space-card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+
+.space-card-link:hover {
+  opacity: 0;
+}

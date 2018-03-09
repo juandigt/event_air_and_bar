@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container space-card-container">
   <div class="row filter-bar">
     <div class="col-xs-12">
       <div class="form-inline">
@@ -18,18 +18,20 @@
   </div>
   <div class="row">
     <% @spaces.each do |space| %>
-      <div class="col-xs-12 col-md-6 col-lg-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url(<%= space.photo %>);">
-          <div class="card-category">
-            <%= space.name[0..30] %>&hellip;
+      <div class="col-xs-12 col-md-4 col-lg-3">
+        <div class="space-card">
+
+          <div class="space-card-image" style="background-image: url(<%= space.photo %>);">
+          <%= link_to "view details >" , space_path(space), class: "space-card-link" %>
           </div>
-          <div class="card-description">
+          <div class="space-card-content">
+            <%= space.name[0..30] %>&hellip;
             <h2><%= space.address[0..50] %>&hellip;</h2>
             <p><%= space.user_id %></p>
             <!-- <%= link_to "view details >" , space_path(space), class: "btn btn-info" %> -->
             <!-- # <%= link_to "Delete " , space_path(space), method: :delete %> -->
+          <%= link_to "view details >" , space_path(space), class: "space-card-link" %>
           </div>
-          <%= link_to "view details >" , space_path(space), class: "card-link" %>
         </div>
       </div>
     <% end %>
