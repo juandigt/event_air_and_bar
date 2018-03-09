@@ -13,7 +13,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-6">
-      <div>
+      <div class="background-space-info">
         <h1><%= @space.name %></h1>
         <p><%= @space.address %></p>
         <p><i class="fas fa-users"></i> <%= @space.capacity %> people</p>
@@ -24,17 +24,17 @@
     <div class="col-xs-12 col-md-6 text-center">
       <div> <!-- Bookings -->
         <% if @userbookings != [] %>
-          <h2>Your bookings</h2>
+          <h2><i class="far fa-calendar"></i> Your bookings</h2>
           <% @userbookings.each do |b| %>
             <h3>
               <% if b.status == nil %>
                 You have no bookings yet
               <% elsif b.status == 2 %>
-                <span class="text-success">Approved </span><i class="far fa-smile text-success"></i> <%= b.date %>
+                <span class="text-success">Approved </span><i class="far fa-check-circle text-success"></i> <%= b.date %>
               <% elsif b.status == 1 %>
-                <span class="text-primary">Pending </span><i class="far fa-meh text-primary"></i> <%= b.date %>
+                <span class="text-primary">Pending </span><i class="far fa-question-circle text-primary"></i> <%= b.date %>
               <% else %>
-                <span class="text-danger">Declined </span><i class="far fa-frown text-danger"></i> <%= b.date %>
+                <span class="text-danger">Declined </span><i class="fas fa-ban text-danger"></i> <%= b.date %>
               <% end %>
             </h3>
           <% end %>
