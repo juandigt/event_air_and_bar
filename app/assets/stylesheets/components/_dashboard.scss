@@ -1,5 +1,14 @@
 .dashboard-card {
+  position: relative;
   margin-top: 20px;
   padding-top: 15px;
   width: 50%;
+}
+
+.space-card-owner-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  float: left;
 }
