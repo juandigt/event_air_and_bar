@@ -1,10 +1,10 @@
 .title-new-page {
   text-align: center;
-  font-weight: bold;
+  font-weight: lighter;
   color: white;
 }
 
-.background-new-space-page{
+.background-new-space-page {
   background-image: url("https://picsum.photos/1920/1000?image=999");
   padding-right: 15px;
   padding-left: 15px;
@@ -18,6 +18,7 @@
   padding: 20px 0
 }
 
+
 .form-box{
   margin-top: 40px;
   max-width: 500px;
@@ -25,21 +26,26 @@
   margin: 0 auto;
   color: white;
   border-radius: 4px;
-  background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%)
+  background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%);
 }
 
-.btn-new-space {
-  position: relative;
-  display: block;
-  padding: 19px 39px 18px 39px;
-  color: #FFF;
-  margin: 0 auto;
-  background: #1abc9c;
-  font-size: 16px;
-  text-align: center;
-  font-style: normal;
-  width: 100%;
-  border: 1px solid #768ebf;
-  border-width: 1px 1px 1px;
-  margin-bottom: 10px;
-}
+// .btn-new-space {
+//   position: relative;
+//   display: block;
+//   padding: 19px 39px 18px 39px;
+//   color: white;
+//   margin: 0 auto;
+//   background: $red;
+//   font-size: 16px;
+//   text-align: center;
+//   font-style: normal;
+//   width: 100%;
+// <<<<<<< HEAD
+//   border: 1px solid #768ebf;
+//   border-width: 1px 1px 1px;
+// =======
+//   border: none;
+//   border-width: 1px 1px 3px;
+// >>>>>>> 296e05f5c5160eac20d1800ebc2033c37fdcdf05
+//   margin-bottom: 10px;
+// }

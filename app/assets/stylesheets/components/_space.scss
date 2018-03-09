@@ -5,7 +5,7 @@
 .form-fields {
   margin-top: 15px;
   margin-bottom: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
 }
 
 a.animated-button {
@@ -13,7 +13,7 @@ a.animated-button {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 a.animated-button:after {
-  background: #D24D57;
+  background: $purple;
   opacity: .5;
   -moz-transform: translateY(-50%) translateX(-50%) rotate(90deg);
   -ms-transform: translateY(-50%) translateX(-50%) rotate(90deg);
@@ -37,7 +37,7 @@ a.animated-button:hover:after {
 }
 
 .background-space-info {
-  background-color: #FFFFF8;
+  background-color: white;
   margin-top: 30px;
   padding: 10px 30px 20px 30px;
 }
@@ -55,12 +55,12 @@ a.animated-button:hover:after {
   background-color: white;
   border-radius: 2px;
   margin-bottom: 25px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
   transition: 0.2s;
 }
 
 .space-card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 8px 8px 8px 0 rgba(0,0,0,0.2);
 }
 
 .space-card-image {

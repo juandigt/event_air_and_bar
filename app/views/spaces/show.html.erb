@@ -4,7 +4,7 @@
       <% if @space.user_id == current_user.id %>
         <%= link_to "Edit my space", edit_space_path, class: "btn btn-lg" %>
       <% elsif @space.user_id != current_user.id %>
-        <button type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target="#bookModal">Book This Place</button>
+        <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#bookModal">BOOK</button>
       <% end %>
     <% end %>
   </div>
@@ -60,7 +60,7 @@
           <%= b.hidden_field :status %>
           <%= b.hidden_field :user_id %>
           <%= b.hidden_field :space_id %>
-          <%= b.submit "Book", class: "btn btn-primary btn-new-space" %>
+          <h2><%= b.submit "Confirm Booking", class: "btn btn-primary btn-new-space" %></h2>
         <% end %>
       </div>
       <div class="modal-footer">
