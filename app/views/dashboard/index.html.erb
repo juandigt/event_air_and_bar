@@ -1,6 +1,6 @@
 <div class="space-card-container">
   <h1>Welcome to your dashboard <%= @user.email %></h1>
-  <div class="space-card dashboard-card">
+  <div class="dashboard-card">
     <div class="space-card-content">
       <% if @my_bookings.blank? %>
         <p>You still don't have any booking.
@@ -21,9 +21,9 @@
   <% else %>
     <h1>The list of your spaces</h1>
     <% @spaces.each do |space| %>
-      <div class="space-card dashboard-card">
-        <div class="space-card-owner-image"><%= cl_image_path space.photo %>
-        </div>
+      <div class="dashboard-card">
+        <!-- <div class="space-card-owner-image"><%= cl_image_path space.photo %>
+        </div> -->
         <div class="space-card-content">
           <%= link_to space.name, space_path(space), class: "btn btn-primary" %>
           <%= link_to "Edit my space", edit_space_path(space.id), class: "btn btn-primary" %>
@@ -34,17 +34,17 @@
             <% end %>
             <ul>
               <% space.bookings.each do |booking| %>
-                <li>Booked for <%= l(booking.date, format: :long) %> by <%= booking.user.email %> --
+                <li>Booked for <strong><%= l(booking.date, format: :long) %></strong> by <%= booking.user.email %> --
                   <% if booking.pending? %>
-                    <span class="text-primary">Pending </span><i class="far fa-question-circle text-primary"></i>
+                    <span class="text-primary">Pending: </span><i class="far fa-question-circle text-primary"></i>&nbsp;&nbsp;&nbsp;
                   <% elsif booking.approved? %>
-                    <span class="text-success">Approved </span><i class="far fa-check-circle text-success"></i>
+                    <span class="text-success">Approved: </span><i class="far fa-check-circle text-success"></i>&nbsp;&nbsp;&nbsp;
                   <% elsif booking.declined? %>
-                    <span class="text-danger">Declined </span><i class="far fa-ban text-danger"></i>
+                    <span class="text-danger">Declined:&nbsp;&nbsp;&nbsp;</span><i class="far fa-ban text-danger"></i>&nbsp;&nbsp;&nbsp;
                    <% end %>
 
-                <%= link_to "Approve", booking_path(booking, status: "approved"), method: :patch  %> |
-                <%= link_to "Decline", booking_path(booking, status: "declined"), method: :patch  %>
+                <%= link_to "Approve", booking_path(booking, status: "approved"), class: "btn btn-sm btn-success", method: :patch %> -
+                <%= link_to "Decline", booking_path(booking, status: "declined"), class: "btn btn-sm btn-danger", method: :patch  %>
                 </li>
               <% end %>
             </ul>
