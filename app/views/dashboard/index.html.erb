@@ -1,52 +1,54 @@
-<h1>Welcome to your dashboard <%= @user.email %></h1>
+<div class="space-card-container">
+  <h1>Welcome to your dashboard <%= @user.email %></h1>
+  <div>
+    <% if @my_bookings.blank? %>
+      <p>You still don't have any booking.
+      <%= link_to "Search for a nice place", spaces_path %></p>
+    <% else %>
+      <h1>Bookings I made:</h1>
+      <% @my_bookings.each do |booking| %>
+        <p>I booked <%= booking.space.name %> at <%= booking.date %></p>
+      <% end %>
+    <% end %>
+  </div>
 
-<% if @my_bookings.blank? %>
-  <p>You still don't have any booking.
-  <%= link_to "Search for a nice place", spaces_path %></p>
-<% else %>
-  <h1>Bookings I made:</h1>
-  <% @my_bookings.each do |booking| %>
-    <p>I booked <%= booking.space.name %> at <%= booking.date %></p>
-  <% end %>
-<% end %>
-
-<% if @spaces.blank? %>
-  <p></p>
-<% else %>
-  <h1>The list of your spaces</h1>
-  <div class="container">
-      <% @spaces.each do |space| %>
-        <div >
-          <div style=" border-style: solid; background-image: url('<%= space.photo %>');">
-            <div >
-              <div><%=  space.photo %></div>
-              <%= link_to space.name, space_path(space) %>
-              <%= link_to "Edit my space", edit_space_path(space.id), class: "btn " %>
-                <% if space.bookings.blank? %>
-                  <h5>No bookings yet</h5>
-                <% else %>
-                  <h5>Bookings for this space:</h5>
-                <% end %>
-                <ul>
-                  <% space.bookings.each do |booking| %>
-                    <li>Booked for <%= l(booking.date, format: :long) %> by <%= booking.user.email %> --
-                      <% if booking.pending? %>
-                        <span class="text-primary">Pending </span><i class="far fa-question-circle text-primary"></i>
-                      <% elsif booking.approved? %>
-                        <span class="text-success">Approved </span><i class="far fa-check-circle text-success"></i>
-                      <% elsif booking.declined? %>
-                        <span class="text-danger">Declined </span><i class="far fa-ban text-danger"></i>
-                       <% end %>
-
-                    <%= link_to "Approve", booking_path(booking, status: "approved"), method: :patch  %> |
-                    <%= link_to "Decline", booking_path(booking, status: "declined"), method: :patch  %>
-                    </li>
+  <% if @spaces.blank? %>
+    <p></p>
+  <% else %>
+    <h1>The list of your spaces</h1>
+    <div class="container">
+        <% @spaces.each do |space| %>
+          <div >
+            <div style=" border-style: solid; background-image: url('<%= space.photo %>');">
+              <div >
+                <div><%=  space.photo %></div>
+                <%= link_to space.name, space_path(space) %>
+                <%= link_to "Edit my space", edit_space_path(space.id), class: "btn " %>
+                  <% if space.bookings.blank? %>
+                    <h5>No bookings yet</h5>
+                  <% else %>
+                    <h5>Bookings for this space:</h5>
                   <% end %>
-                </ul>
+                  <ul>
+                    <% space.bookings.each do |booking| %>
+                      <li>Booked for <%= l(booking.date, format: :long) %> by <%= booking.user.email %> --
+                        <% if booking.pending? %>
+                          <span class="text-primary">Pending </span><i class="far fa-question-circle text-primary"></i>
+                        <% elsif booking.approved? %>
+                          <span class="text-success">Approved </span><i class="far fa-check-circle text-success"></i>
+                        <% elsif booking.declined? %>
+                          <span class="text-danger">Declined </span><i class="far fa-ban text-danger"></i>
+                         <% end %>
+
+                      <%= link_to "Approve", booking_path(booking, status: "approved"), method: :patch  %> |
+                      <%= link_to "Decline", booking_path(booking, status: "declined"), method: :patch  %>
+                      </li>
+                    <% end %>
+                  </ul>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
-    </div>
-
-<% end %>
+        <% end %>
+      </div>
+  <% end %>
+</div>
