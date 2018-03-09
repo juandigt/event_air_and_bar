@@ -1,22 +1,25 @@
 <div class="space-card-container">
   <h1>Welcome to your dashboard <%= @user.email %></h1>
-  <div>
-    <% if @my_bookings.blank? %>
-      <p>You still don't have any booking.
-      <%= link_to "Search for a nice place", spaces_path %></p>
-    <% else %>
-      <h1>Bookings I made:</h1>
-      <% @my_bookings.each do |booking| %>
-        <p>I booked <%= booking.space.name %> at <%= booking.date %></p>
+  <div class="space-card dashboard-card">
+    <div class="space-card-content">
+      <% if @my_bookings.blank? %>
+        <p>You still don't have any booking.
+        <%= link_to "Search for a nice place", spaces_path %></p>
+      <% else %>
+        <h2>Bookings I made:</h2>
+        <% @my_bookings.each do |booking| %>
+          <p><%= booking.space.name %> at <strong><%= booking.date %></strong></p>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-
+</div>
+<div class="space-card-container">
   <% if @spaces.blank? %>
     <p></p>
   <% else %>
     <h1>The list of your spaces</h1>
-    <div class="container">
+    <div class="space-card-container">
         <% @spaces.each do |space| %>
           <div >
             <div style=" border-style: solid; background-image: url('<%= space.photo %>');">
