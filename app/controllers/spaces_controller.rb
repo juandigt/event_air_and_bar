@@ -60,7 +60,7 @@ class SpacesController < ApplicationController
   private
 
   def space_params
-    params.require(:space).permit(:description, :name, :address, :capacity, :price, :photo, :user_id)
+    params.require(:space).permit(:description, :name, :address, :capacity, :price, :photo, :user_id, :booking_id)
   end
 
   def any_of_search_params_present?

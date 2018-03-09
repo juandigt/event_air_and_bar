@@ -29,12 +29,12 @@
             <h3>
               <% if b.status == nil %>
                 You have no bookings yet
-              <% elsif b.status == 2 %>
-                <span class="text-success">Approved </span><i class="far fa-smile text-success"></i> <%= b.date %>
-              <% elsif b.status == 1 %>
-                <span class="text-primary">Pending </span><i class="far fa-meh text-primary"></i> <%= b.date %>
+              <% elsif b.approved? %>
+                <span class="text-success">Approved </span><i class="far fa-check-circle text-success"></i> <%= b.date %>
+              <% elsif b.pending? %>
+                <span class="text-primary">Pending </span><i class="far fa-question-circle text-primary"></i> <%= b.date %>
               <% else %>
-                <span class="text-danger">Declined </span><i class="far fa-frown text-danger"></i> <%= b.date %>
+                <span class="text-danger">Declined </span><i class="fas fa-ban text-danger"></i> <%= b.date %>
               <% end %>
             </h3>
           <% end %>
