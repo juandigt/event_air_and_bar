@@ -11,15 +11,20 @@
   margin-right: auto;
   margin-left: auto;
   margin-top: 1px;
+  height: calc(100vh - 70px);
+}
+
+.space-form-container{
+  padding: 20px 0
 }
 
 .form-box{
   margin-top: 40px;
   max-width: 500px;
-  padding: 10px 20px;
-  margin: 1px auto;
+  padding: 10px 20px 20px 20px;
+  margin: 0 auto;
   color: white;
-  border-radius: 8px;
+  border-radius: 4px;
   background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%)
 }
 
@@ -35,6 +40,6 @@
   font-style: normal;
   width: 100%;
   border: 1px solid #768ebf;
-  border-width: 1px 1px 3px;
+  border-width: 1px 1px 1px;
   margin-bottom: 10px;
 }
