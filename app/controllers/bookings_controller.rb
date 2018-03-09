@@ -3,8 +3,6 @@ class BookingsController < ApplicationController
   # Add exceptions to above line - Ie: ', only: :home'
 
   def index
-    @spaces = policy_scope(Space).order(created_at: :desc)
-    @bookings = Booking.all
   end
 
   def show
@@ -19,9 +17,9 @@ class BookingsController < ApplicationController
   def create
     @space = Space.find(params[:space_id])
     @booking = current_user.bookings.new(booking_params)
-    @booking.status = 1
+    @booking.status = "pending"
     @booking.space = @space
-    authorize @space
+    authorize @booking
     if @booking.save(booking_params)
       redirect_to space_path(@space)
     else
@@ -34,9 +32,10 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking = Booking.find(booking_params)
-    @booking.update(booking_params)
-    redirect_to bookings_path
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.update(status: params[:status])
+    redirect_to dashboard_path
   end
 
   def destroy
