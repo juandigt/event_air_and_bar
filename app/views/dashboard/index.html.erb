@@ -31,11 +31,11 @@
                   <% space.bookings.each do |booking| %>
                     <li>Booked for <%= l(booking.date, format: :long) %> by <%= booking.user.email %> --
                       <% if booking.pending? %>
-                        <span class="text-primary">Pending </span><i class="far fa-meh text-primary"></i>
+                        <span class="text-primary">Pending </span><i class="far fa-question-circle text-primary"></i>
                       <% elsif booking.approved? %>
-                        <span class="text-success">Approved </span><i class="far fa-smile text-success"></i>
+                        <span class="text-success">Approved </span><i class="far fa-check-circle text-success"></i>
                       <% elsif booking.declined? %>
-                        <span class="text-danger">Declined </span><i class="far fa-frown text-danger"></i>
+                        <span class="text-danger">Declined </span><i class="far fa-ban text-danger"></i>
                        <% end %>
 
                     <%= link_to "Approve", booking_path(booking, status: "approved"), method: :patch  %> |
