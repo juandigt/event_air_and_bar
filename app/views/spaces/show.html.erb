@@ -4,7 +4,7 @@
       <% if @space.user_id == current_user.id %>
         <%= link_to "Edit my space", edit_space_path, class: "btn btn-lg" %>
       <% elsif @space.user_id != current_user.id %>
-        <button type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target="#bookModal">BOOK</button>
+        <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#bookModal">BOOK</button>
       <% end %>
     <% end %>
   </div>

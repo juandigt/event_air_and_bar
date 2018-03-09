@@ -6,25 +6,25 @@
 // General style
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
-$body-bg:                 $gray;
+$body-bg:                 $light-gray;
 $font-size-base: 16px;
 
 
-// Colors
+// Colors original bootstrap:
+// $gray-base:       $gray;
+// $brand-primary:   $blue;
+// $brand-success:   $green;
+// $brand-info:      $yellow;
+// $brand-danger:    $red;
+// $brand-warning:   $orange;
+
+// adapted colors:
 $gray-base:       $gray;
 $brand-primary:   $red;
 $brand-success:   $green;
 $brand-info:      $purple;
-$brand-danger:    $purple;
-$brand-warning:   $rose;
-
-// $pink: #BA2C73;
-// $rose: #6D3B47;
-// $yellow: #FDB631;
-// $purple: #420039;
-// $green: #104547;
-// $black: #0C1821;
-// $gray: #CFD7C7;
+$brand-danger:    $yellow;
+$brand-warning:   $orange;
 
 
 // Buttons & inputs' radius
