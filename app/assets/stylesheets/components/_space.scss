@@ -11,7 +11,7 @@ a.animated-button {
   border: 2px solid #D24D57;
 }
 a.animated-button:after {
-  background: #D24D57;
+  background: $purple;
   opacity: .5;
   -moz-transform: translateY(-50%) translateX(-50%) rotate(90deg);
   -ms-transform: translateY(-50%) translateX(-50%) rotate(90deg);
